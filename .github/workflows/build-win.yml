@@ -25,25 +25,25 @@ jobs:
       - name: Build/release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
-          github_token: ${{ secrets.GITHUBTOKEN }}
+          github_token: ${{ secrets.GHT }}
       
       - name: Delete old release assets
         uses: mknejp/delete-release-assets@v1
         with:
-          token: ${{ secrets.GITHUBTOKEN }}
+          token: ${{ secrets.GHT }}
           tag: "latest"
           assets: "*.exe"
       
       #- name: Create Release Notes
       #  uses: docker://decathlon/release-notes-generator-action:2.0.1
       #  env:
-      #    GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #    GITHUB_TOKEN: ${{ secrets.GHT }}
       #    FILENAME_PREFIX: Release_Notes
     
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: "dist/*.exe"
-          token: ${{ secrets.GITHUBTOKEN }}
+          token: ${{ secrets.GHT }}
           tag_name: "latest"
           body_path: ".github/workflows/body.md"
