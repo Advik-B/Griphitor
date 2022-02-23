@@ -1,6 +1,6 @@
 # Griphitor Desktop
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)   [![Build/release win](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-win.yml/badge.svg)](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-win.yml) [![Build/release mac](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-mac.yml/badge.svg)](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-mac.yml) [![Build/release linux](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-linux.yml/badge.svg)](https://github.com/Griphitor/Griphitor-CTB/actions/workflows/build-linux.yml)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://www.javascript.com/)   [![Build/release win](https://github.com/Griphitor/Griphitor/actions/workflows/build-win.yml/badge.svg)](https://github.com/Griphitor/Griphitor/actions/workflows/build-win.yml) [![Build/release mac](https://github.com/Griphitor/Griphitor/actions/workflows/build-mac.yml/badge.svg)](https://github.com/Griphitor/Griphitor/actions/workflows/build-mac.yml) [![Build/release linux](https://github.com/Griphitor/Griphitor/actions/workflows/build-linux.yml/badge.svg)](https://github.com/Griphitor/Griphitor/actions/workflows/build-linux.yml)
 
 **The official desktop application for Griphitor built with electron.**
 
