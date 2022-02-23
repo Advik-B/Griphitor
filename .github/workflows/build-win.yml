@@ -31,7 +31,7 @@ jobs:
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ secrets.GHT }}
-          tag: "latest"
+          tag: "latest-win"
           assets: "*.exe"
       
       #- name: Create Release Notes
