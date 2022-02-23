@@ -1,0 +1,66 @@
+/*.editor, .CodeMirror {
+  width: 100%;
+  height: 526px;
+  position: relative;
+}*/
+.editor, .CodeMirror {
+  width: 100%;
+  height: 526px;
+  position: relative;
+}
+.full-width {
+  width: 100%;
+  float: initial;
+}
+/*.editor {
+  padding-bottom: 4em;
+}*/
+/*
+@media screen and (min-width: 720px) {
+    .editor {
+        width: 50%;
+        float: left;
+        padding-bottom: 0;
+    }
+    .full-width {
+        width: 100%;
+        float: initial;
+    }
+}*/
+.text-center {
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+.border-bottom {
+  border-bottom: 1px solid #333;
+}
+.white {
+  color: white;
+}
+#FileName {
+  padding-left: 10px;
+}
+
+/* Modal */
+.modal a.close-modal[class*="icon-remove"] {
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0;
+  background: #900;
+  border: 2px solid #fff;
+  -webkit-border-radius:  26px;
+  -moz-border-radius:     26px;
+  -o-border-radius:       26px;
+  -ms-border-radius:      26px;
+  -moz-box-shadow:    1px 1px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow:         1px 1px 5px rgba(0,0,0,0.5);
+}

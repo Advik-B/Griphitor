@@ -1,0 +1,20 @@
+<html>
+<body>
+	<label for="inputFile">Select a ZIP File:</label>
+</script>
+<input type=file id=f>
+<script type="text/javascript" src="./assets/lib/js/jszip.min.js" ></script>
+<script type="text/javascript" src="./assets/lib/js/jszip-utils.min.js" ></script>
+<script type="text/javascript" >
+f.onchange = function() {
+  var zip = new JSZip();
+  zip.loadAsync( this.files[0] /* = file blob */)
+     .then(function(zip) {
+         // process ZIP file content here
+         alert("OK")
+      console.log(zip);
+     }, function() {alert("Not a valid zip file")}); 
+};
+</script>
+</body>
+</html>

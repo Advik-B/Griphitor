@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="./assets/internal/images/app.png" type="image/x-icon">
+	<!-- Style -->
+	<link rel='stylesheet' href="./assets/lib/css/fa-4.7.0-min.css" />
+	<link rel='stylesheet' href="./assets/lib/css/fa-5.7.0-all.css" />
+  <link rel='stylesheet' href="./assets/internal/css/sidebar.css" />
+  <!-- feather Icons -->
+  <script src="./assets/internal/js/feather.min.js"></script>
+	<!-- Syntax Highlighting -->
+	<script src="./assets/internal/js/syntax/syntax-combined.js"></script>
+	<script src="./assets/internal/js/syntax/search-combined.js"></script>
+  <script src="./assets/internal/js/syntax/shell.js"></script>
+  <script src="./assets/internal/js/syntax/python.js"></script>
+  <script src="./assets/internal/js/syntax/batch.js"></script>
+  <!-- Linting -->
+  <script src="./assets/internal/js/addon/css-lint.js"></script>
+  <script src="./assets/internal/js/addon/javascript-lint.js"></script>
+  <script src="./assets/internal/js/addon/json-lint.js"></script>
+  <script src="./assets/internal/js/addon/linting/csslint.js"></script>
+  <script src="./assets/internal/js/addon/linting/jsonlist.js"></script>
+  <script src="./assets/internal/js/addon/linting/lint.js"></script>
+  <script src="./assets/internal/js/addon/linting/jshint.js"></script>
+  <!-- other syntax styles -->
+	<link rel="stylesheet" href="./assets/internal/css/codemirror.css">
+  <link rel="stylesheet" href="./assets/internal/css/lint.css">
+	<link rel="stylesheet" href="./assets/internal/css/highlight.css">
+  <link rel="stylesheet" href="./assets/internal/css/themes.css">
+  <link rel="stylesheet" href="./assets/internal/css/style.css" />
+	<link rel="stylesheet" href="./assets/internal/css/style2.css" />
+	<!-- Editor scrollbar -->
+	<script src="./assets/internal/js/syntax/scrollbar.js"></script>
+	<!-- Title -->
+	<title>Griphitor</title>
+	<!-- Loading animation -->
+  <link rel='stylesheet' href='./assets/internal/css/loading.css' type='text/css'>
+  <div class='loader'>
+    <center>
+      <img src="./assets/internal/images/loading.gif" alt="Loading..." />
+      <p id="LoadingText" class="white-text">Loading . . .</p>
+    </center>
+  </div>
+  <script src="./assets/internal/js/loading.js"></script>
+</head>
+<!-- Body -->
+<body id="body" style="margin:0;" class="dark white-text">
+<!-- navbar -->
+<div class="sidenav">
+  <button id="AboutBtn"><a class="OpenBtn">About <i data-feather="info" class="fa fa-info"></i></a></button>
+  <button id="SettingsBtn"><a class="OpenBtn">Settings <i data-feather="settings" class="fa fa-cog"></i></a></button>
+  <!--<button id="changetree"><a class="OpenBtn">Change tree <i data-feather="folder" class="fa fa-folder"></i></a></button>-->
+  <button id="PreviewBtn" style="display: none;"><a class="OpenBtn">Preview HTML <i data-feather="play" class="fa fa-play"></i></a></button>
+  <button id="OpenBtn"><a class="OpenBtn">Open File <i data-feather="folder" class="fa fa-folder-open"></i></a></button>
+  <!-- Themes will be in the settings -->
+  <div class="settings" id="settings-div" style="display: none;">
+    <div>
+      <p>Select a theme: <select id="ThemeSelect">
+          <option selected>griphitor</option>
+          <option>monokai</option>
+          <option>oceanic-next</option>
+          <option>zenburn</option>
+          <option>cobalt</option>
+          <option>white wash</option>
+        </select>
+      </p>
+    </div>
+    <div>
+      <p>Select a icon theme: <select id="IconSelect">
+          <option selected>Font Awesome 5</option>
+          <option>Feather Icons</option>
+        </select>
+      </p>
+    </div>
+    <div>
+      <input type="checkbox" id="OpenLastFile" name="OpenLastFile" checked>
+      <label for="OpenLastFile"> Reopen last edited file on startup</label><br>
+    </div>
+    <div>
+      <input type="checkbox" id="ShowDiscordRPC" name="ShowDiscordRPC">
+      <label for="ShowDiscordRPC"> Show what your editing in discord</label><br>
+    </div>
+  </div>
+</div>
+<!-- editor -->
+<div class="main">
+	<!-- Modal -->
+	<div id="modal-iframe" aria-hidden="false" aria-labelledby="modal-iframe" role="dialog" class="iziModal dark" style="background: black none repeat scroll 0% 0%; z-index: 999; border-radius: 3px; overflow: hidden; max-width: 600px; display: none; height: 444px;">
+		<div class="iziModal-header iziModal-noSubtitle" style="background: rgb(136, 160, 185) none repeat scroll 0% 0%; padding-right: 40px;">
+			<h2 class="iziModal-header-title">About Griphitor</h2>
+			<p class="iziModal-header-subtitle"></p>
+			<div class="iziModal-header-buttons">
+				<a href="javascript:void(0)" class="iziModal-button iziModal-button-close" data-izimodal-close=""></a>
+			</div>
+		</div>
+		<div class="iziModal-wrap" style="height: auto;">
+			<div class="iziModal-content" style="padding: 0px;">
+				<iframe class="iziModal-iframe" style="height: 400px;" src="about.html">
+				</iframe>
+			</div>
+		</div>
+	</div>
+	<div id="ModalOverlay" class="iziModal-overlay" style="background-color: rgba(0, 0, 0, 0.4); z-index: 997; display: none;"></div>
+  <div class="editor">
+    <p id="FileName" class="white-text">Editing nothing</p>
+    <textarea id="editor" rows="10" cols="10"></textarea>
+  </div>
+</div>
+    <!-- HIDDEN INPUT FILE -->
+    <input type="file" id="file-open-input" accept="*.*" class="hide">
+  </body>
+  <!-- Libs -->
+  <!--<script src="./assets/lib/js/jquery-3.4.1.min.js"></script>-->
+	<script type="text/javascript">
+    window.jQuery = window.$ = require('./assets/lib/js/jquery-3.4.1.min.js');
+  </script>
+  <script src="./assets/lib/js/FileSaver.js"></script>
+  <script src="./assets/lib/js/jszip.min.js"></script>
+  <!-- Notifications -->
+  <script src="./assets/internal/js/notifications/izitoast.min.js"></script>
+  <link rel="stylesheet" href="./assets/internal/css/izitoast.min.css">
+	<script type="text/javascript" src="./assets/internal/js/notifications/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="./assets/internal/css/jquery.modal.min.css">
+  <script src="./assets/internal/js/notifications/izimodal.min.js"></script>
+  <link rel="stylesheet" href="./assets/internal/css/izimodal.min.css">
+	<!-- Custom Functions -->
+	<script src="./assets/internal/js/functions.js"></script>
+	<!-- Main app script -->
+	<script type="text/javascript" src="./assets/internal/js/app.js"></script>
+</html>

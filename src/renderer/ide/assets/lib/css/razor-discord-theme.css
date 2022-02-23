@@ -1,0 +1,447 @@
+:root {
+    --rz-dsc-darkmode-newblurple: #5865F2;
+    --rz-dsc-darkmode-oldblurple: #6E85D3;
+    --rz-dsc-darkmode-selected: #393C43;
+    --rz-dsc-darkmode-hovered: #34373C;
+    --rz-dsc-darkmode-textbox: #40444B;
+    --rz-dsc-darkmode-button: #B9BBBE;
+    --rz-dsc-darkmode-body: #36393F;
+    --rz-dsc-darkmode-bodyhovered: #32353B;
+    --rz-dsc-darkmode-scrollbar: #202225;
+    --rz-dsc-darkmode-serverbar: #202225;
+    --rz-dsc-darkmode-searchbar: #202225;
+    --rz-dsc-role-teal1: #1ABC9C;
+    --rz-dsc-role-teal2: #11806A;
+    --rz-dsc-role-green1: #2ECC71;
+    --rz-dsc-role-green2: #1F8B4C;
+    --rz-dsc-role-blue1: #3498DB;
+    --rz-dsc-role-blue2: #206694;
+    --rz-dsc-role-purple1: #9B59B6;
+    --rz-dsc-role-purple2: #71368A;
+    --rz-dsc-role-red1: #E91E63;
+    --rz-dsc-role-red2: #AD1457;
+    --rz-dsc-role-yellow1: #F1C40F;
+    --rz-dsc-role-yellow2: #C27C0E;
+    --rz-dsc-role-orange1: #E67E22;
+    --rz-dsc-role-orange2: #A84300;
+    --rz-dsc-role-red3: #E74C3C;
+    --rz-dsc-role-red4: #992D22;
+    --rz-dsc-role-grey1: #95A5A6;
+    --rz-dsc-role-grey2: #979C9F;
+    --rz-dsc-role-grey3: #607D8B;
+    --rz-dsc-role-grey4: #546E7A;
+    --rz-dsc-icon-boost-active: #FF73FA;
+    --rz-dsc-icon-boost-inactive: #B9BBBE;
+    --rz-dsc-text-deafult: #C9CBCB;
+    --rz-dsc-text-warning: #EF9D04;
+    --rz-dsc-text-danger: #ED4245;
+    --rz-dsc-text-danger-hover: #C03537;
+    --rz-dsc-lightmode-body: #FFFFFF;
+    --rz-dsc-lightmode-body-hover: #FAFAFA;
+    --rz-dsc-lightmode-searchbar: #E3E5E8;
+    --rz-dsc-lightmode-serverbar: #E3E5E8;
+    --rz-dsc-lightmode-scrollbar: #CCCCCC;
+    --rz-dsc-lightmode-icon: #4F5660;
+    --rz-dsc-status-online: #3BA55D;
+    --rz-dsc-status-idle: #FAA81A;
+    --rz-dsc-status-dnd: #ED4245;
+    --rz-dsc-status-offline: #747F8D;
+    --rz-dsc-ping: #EF5859;
+    --rz-dsc-link: #3670D7;
+    font-family: 'Raleway';font-size: 22px;
+    scroll-behavior: smooth;
+}
+/* TO DO
+Add custom div and normal elements
+Add warning danger primary link and success colors
+Allot more
+*/
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCFPrEHJA.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCMPrEHJA.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCHPrEHJA.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCGPrEHJA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+body {
+    background-color: var(--rz-dsc-darkmode-body);
+    color: white;
+}
+.infotagbefore::before {
+  content: "INFO  ";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-darkmode-newblurple);
+  border-style: solid;
+  border-color: var(--rz-dsc-darkmode-newblurple);
+}
+.infotagafter::after {
+  content: "  INFO";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-darkmode-newblurple);
+  border-style: solid;
+  border-color: var(--rz-dsc-darkmode-newblurple);
+}
+.dangertagafter::after {
+  content: "DANGER";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-text-danger);
+  border-style: solid;
+  border-color: var(--rz-dsc-text-danger);
+}
+.dangertagbefore::before {
+  content: "DANGER";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-text-danger);
+  border-style: solid;
+  border-color: var(--rz-dsc-text-danger);
+}
+.warningtagbefore::before {
+  content: "WARNING";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-text-warning);
+  border-style: solid;
+  border-color: var(--rz-dsc-text-warning);
+}
+.warningtagafter::after {
+  content: "WARNING";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-text-warning);
+  border-style: solid;
+  border-color: var(--rz-dsc-text-warning);
+}
+.successtagafter::after {
+  content: "SUCCESS";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-status-online);
+  border-style: solid;
+  border-color: var(--rz-dsc-status-online);
+}
+.successtagbefore::before {
+  content: "SUCCESS";
+  font-size: 10px;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-status-online);
+  border-style: solid;
+  border-color: var(--rz-dsc-status-online);
+}
+.disabledtagbefore::before {
+  content: "DISABLED";
+  font-size: 10px;
+  cursor: not-allowed;
+  display: inline-block;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-status-offline);
+  border-style: solid;
+  border-color: var(--rz-dsc-status-offline);
+}
+.disabledtagafter::after {
+  content: "DISABLED";
+  font-size: 10px;
+  display: inline-block;
+  cursor: not-allowed;
+  align-self: center;
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px;
+  color: var(--rz-dsc-status-offline);
+  border-style: solid;
+  border-color: var(--rz-dsc-status-offline);
+}
+div.danger {
+    background-color: var(--rz-dsc-text-danger);
+    padding: 5px;
+}
+div.danger-outline:hover {
+    background-color: var(--rz-dsc-text-danger-hover);
+}
+button.danger-outline {
+  color: var(--rz-dsc-text-danger);
+}
+button.danger-outline:hover {
+  color: var(--rz-dsc-text-danger-hover);
+}
+button.danger {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-text-danger);
+  color: white;
+}
+button.danger:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-text-danger-hover);
+  color: white;
+}
+button.primary-outline {
+  color: white;
+}
+button.primary-outline:hover {
+  color: var(--rz-dsc-text-deafult);
+}
+button.primary {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: gray;
+  color: rgb(194, 194, 194);
+}
+button.primary:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: gray;
+  color: rgb(194, 194, 194);
+}
+button.secondary-outline {
+  color: var(--rz-dsc-icon-boost-inactive);
+}
+button.secondary-outline:hover {
+  color: var(--rz-dsc-lightmode-body);
+}
+button.secondary {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-lightmode-body);
+  color: gray;
+}
+button.secondary:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-lightmode-body-hover);
+  color: gray;
+}
+button.disabled-outline {
+  cursor: not-allowed;
+  color: var(--rz-dsc-role-grey3);
+}
+button.disabled {
+  cursor: not-allowed;
+  color: var(--rz-dsc-role-grey3);
+}
+button.success-outline {
+  color: var(--rz-dsc-status-online);
+}
+button.success-outline:hover {
+  color: var(--rz-dsc-role-teal1);
+}
+button.success {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-status-online);
+  color: white;
+}
+button.success:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-role-teal1);
+  color: white;
+}
+button.warning-outline {
+  color: var(--rz-dsc-text-warning);
+}
+button.warning-outline:hover {
+  color: var(--rz-dsc-role-orange2);
+}
+button.warning {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  background-color: var(--rz-dsc-role-orange1);
+  color: white;
+}
+button.warning:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--rz-dsc-role-orange2);
+}
+button.info-outline {
+  color: var(--rz-dsc-role-blue1);
+}
+button.info-outline:hover {
+  color: var(--rz-dsc-role-blue2);
+}
+button.info {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--rz-dsc-role-blue1);
+}
+button.info:hover {
+  border: none;
+  padding: 13px 28px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--rz-dsc-role-blue2);
+}
+a {
+  cursor: alias;
+  text-emphasis-color: var(--rz-dsc-link);
+  text-decoration: none;
+  color: var(--rz-dsc-link);
+}
+button {
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border: 2px;
+  border-radius: 2px;
+  border: var(--rz-dsc-darkmode-newblurple);
+}
+.btn-outline {
+  border: 2px solid ;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.jumbotron {
+    background-color: var(--rz-dsc-darkmode-oldblurple);
+    text-align: center;
+    padding: 3em;
+}
+button#left.jumbotron {
+    float: left;
+    border: none;
+    background-color: var(--rz-dsc-darkmode-newblurple);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 2px;
+}
+button#left.jumbotron:hover {
+  background-color: var(--rz-dsc-role-blue1);
+}
+button#left.jumbotron:active {
+  background-color: var(--rz-dsc-role-blue2);
+}
+button#right.jumbotron:active {
+  background-color: var(--rz-dsc-role-blue2);
+}
+button#right.jumbotron:hover {
+  background-color: var(--rz-dsc-role-blue1);
+}
+button#right.jumbotron {
+    float: right;
+    border: none;
+    background-color: var(--rz-dsc-darkmode-newblurple);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #2E3338;
+}
+::-webkit-scrollbar-thumb {
+  background: #202225;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e2022;
+}
+code {
+  color: var(--rz-dsc-status-idle);
+}
+.list::before {
+  content: "ðŸ”¸ ";
+}

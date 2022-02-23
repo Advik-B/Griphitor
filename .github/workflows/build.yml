@@ -1,0 +1,88 @@
+#Disabled
+
+name: Build/release
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v1
+
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+
+      - name: Build/release Electron app
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          github_token: ${{ secrets.GITHUBTOKEN }}
+
+      #- name: Upload .exe file
+      #  uses: actions/upload-artifact@v2
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #    GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #  with:
+      #    name: Setup-Latest-exe
+      #    path: "dist/*.exe"
+      
+      #- name: Upload .AppImage file
+      #  uses: actions/upload-artifact@v2
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #    GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #  with:
+      #    name: Setup-Latest-AppImage
+      #    path: "dist/*.AppImage"
+      
+      #- name: Upload .dmg file
+      #  uses: actions/upload-artifact@v2
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #    GH_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #  with:
+      #    name: Setup-Latest-dmg
+      #    path: "dist/*.dmg"
+      
+      - name: Delete old release assets
+        uses: mknejp/delete-release-assets@v1
+        with:
+          token: ${{ secrets.GITHUBTOKEN }}
+          tag: "latest"
+          assets: | 
+            *.exe
+            *.dmg
+            *.AppImage
+      
+      #- name: Create Release Notes
+      #  uses: docker://decathlon/release-notes-generator-action:2.0.1
+      #  env:
+      #    GITHUB_TOKEN: ${{ secrets.GITHUBTOKEN }}
+      #    FILENAME_PREFIX: Release_Notes
+    
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            dist/*.exe
+            dist/*.AppImage
+            dist/*.dmg
+          token: ${{ secrets.GITHUBTOKEN }}
+          tag_name: "latest"
+          body_path: ".github/workflows/body.md"
