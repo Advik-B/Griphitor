@@ -31,7 +31,7 @@ jobs:
         uses: mknejp/delete-release-assets@v1
         with:
           token: ${{ secrets.GHT }}
-          tag: "latest"
+          tag: "latest-mac"
           assets: "*.AppImage"
       
       #- name: Create Release Notes
