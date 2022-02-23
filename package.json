@@ -1,0 +1,92 @@
+{
+  "name": "griphitor-desktop",
+  "version": "1.2.7",
+  "description": "The Griphitor Desktop app.",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "npm run pack && electron-builder",
+    "dist-win-portable": "electron-builder --win portable",
+    "dist-linux-armv7l": "electron-builder --linux --armv7l",
+    "rebuild": "electron-rebuild",
+    "build-all": "electron-builder -mwl",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Griphitor/Griphitor"
+  },
+  "keywords": [
+    "Electron",
+    "Griphitor"
+  ],
+  "author": {
+    "name": "Griphitor",
+    "email": "contact@griphitor.xyz",
+    "website": "https://griphitor.xyz"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "electron-builder": "^22.14.13",
+    "electron-rebuild": "^3.2.5"
+  },
+  "dependencies": {
+    "decompress": "^4.2.1",
+    "discord-rpc": "^4.0.1",
+    "electron-window-state": "^5.0.3",
+    "emmet": "^2.3.5",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "jquery": "^3.6.0",
+    "log4js": "^6.3.0",
+    "node-minify": "^2.0.3",
+    "node-notifier": "^10.0.0",
+    "os": "^0.1.2",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "tmp": "^0.2.1",
+    "v8-compile-cache": "^2.3.0"
+  },
+  "build": {
+    "appId": "com.Griphitor.github.GriphitorDesktop",
+    "productName": "Griphitor Desktop",
+    "asarUnpack": [
+      "node_modules/",
+      "./node_modules/node-notifier/**/*"
+    ],
+    "mac": {
+      "icon": "build/app.icns",
+      "category": "Network"
+    },
+    "linux": {
+      "target": [
+        "appimage"
+      ],
+      "icon": "build/app.png",
+      "category": "Network"
+    },
+    "win": {
+      "target": [
+        "nsis-web",
+        "portable"
+      ],
+      "icon": "build/app.ico"
+    },
+    "protocols": [
+      {
+        "name": "Griph",
+        "schemes": [
+          "Griph"
+        ]
+      }
+    ],
+    "portable": {
+      "unicode": false,
+      "artifactName": "GriphitorDesktop-Portable.exe"
+    }
+  }
+}
